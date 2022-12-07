@@ -4,9 +4,14 @@ class Auto {
 		this.model = model;
 		this.year = year;
 		this.vin = vin;
-		this.log = () => `${this.brand} ${this.model} ${this.year}`
-		this.checkVin = () => this.vin.length === 16
 	}
+		log () {
+			return `${this.brand} ${this.model} ${this.year}`
+		}
+		checkVin ()  {
+			return this.vin.length === 16
+		}
+
 }
 
 const avto = new Auto("Tesla", "Model X", 2020, "AF12124AEGJ32413");
@@ -19,7 +24,9 @@ class Auto_Fuel extends Auto {
 		super(brand, model, year, vin);
 		this.engineVolume = engineVolume;
 		this.litr = litr;
-		this.showFuelConsumption = () => `${this.engineVolume} ${this.litr}/100км`
+	}
+		showFuelConsumption(){
+			return `${this.engineVolume} ${this.litr}/100км`
 	}
 }
 
@@ -33,7 +40,9 @@ class Auto_Electric extends Auto {
 	constructor(brand, model, year, vin, batteryConfig) {
 		super(brand, model, year, vin);
 		this.batteryConfig = batteryConfig;
-		this.showBatteryConfig = () => this.batteryConfig;
+	}
+		showBatteryConfig(){
+			return this.batteryConfig;
 	}
 }
 const newAvto2 = new Auto_Electric("Tesla", "Model X", 2020, "AF12124AEGJ32413", '100 кВт/ч');
